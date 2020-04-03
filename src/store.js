@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as d3 from "d3";
+import * as d3 from "d3"
+import VueScrollTo from 'vue-scrollto'
 
 import axios from 'axios'
 
@@ -31,7 +32,7 @@ const statsStore = {
         return {}
       }
       let searchResult = getters.data.find(day => {
-        return new Date(Date.parse(day.date)).setHours(0,0,0,0) === date.getTime()
+        return new Date(Date.parse(day.date)).setHours(0, 0, 0, 0) === date.getTime()
       })
       return { date, value: searchResult ? searchResult[field] : null }
     },
@@ -46,7 +47,7 @@ const statsStore = {
     },
   },
   actions: {
-    fetchData: async ({ commit }) => {
+    fetchData: async ({ commit, dispatch }) => {
       const d = await exportTime("https://raw.githubusercontent.com/slo-covid-19/data/master/csv/stats.csv.timestamp")
 
       const [data, regions] = await Promise.all([
@@ -56,6 +57,31 @@ const statsStore = {
       commit('setData', data)
       commit('setRegions', regions)
       commit('setExportTime', d)
+      dispatch('maybeScrollToChart')
+    },
+
+    maybeScrollToChart: ({ rootState }) => {
+      const elementSelector = rootState.route.hash.split('#').pop()
+      const elm = document.getElementById(elementSelector);
+      if (elm) {
+        let offset = -60;
+        // special case for charts
+        if (
+          elm.tagName === "SECTION" &&
+          elementSelector.endsWith("-chart")
+        ) {
+          offset = -90;
+        }
+        window.requestIdleCallback ? window.requestIdleCallback(() => {
+          VueScrollTo.scrollTo(elm, 500, {
+            offset: offset
+          });
+        }) : setTimeout(() => {
+          VueScrollTo.scrollTo(elm, 500, {
+            offset: offset
+          });
+        }, 3000)
+      }
     },
     refreshDataEvery: ({ dispatch }, seconds) => {
       setInterval(() => {
@@ -108,7 +134,7 @@ const hospitalsStore = {
         return {}
       }
       let searchResult = getters.data.find(day => {
-        return new Date(Date.parse(day.date)).setHours(0,0,0,0) === date.getTime()
+        return new Date(Date.parse(day.date)).setHours(0, 0, 0, 0) === date.getTime()
       })
       return { date, value: searchResult ? searchResult[field] : null }
     },
@@ -135,7 +161,7 @@ const hospitalsStore = {
         });
         return row
       });
-      
+
 
       let hospitals = {}
       let rawData = await d3.csv("https://raw.githubusercontent.com/slo-covid-19/data/master/csv/dict-hospitals.csv")
