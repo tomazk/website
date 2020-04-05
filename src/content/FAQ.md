@@ -7,8 +7,8 @@ _Namen Sledilnikovih prikazov je združiti in predstaviti obstoječe podatke v v
 
 <details>
   <summary>So vaši podatki in prikazi verodostojni?</summary>
-  
-Podatke zbiramo iz različnih uradnih in drugih javnih virov – navedeni so v [zavihku Viri](https://covid-19.sledilnik.org/#/sources). 
+
+Podatke zbiramo iz različnih uradnih in drugih javnih virov – navedeni so v [zavihku Viri](https://covid-19.sledilnik.org/#/sources).
 
 Od 28. marca 2020 imamo vzpostavljeno tudi povezavo z Ministrstvom za zdravje, NIJZ in zdravstvenimi zavodi, od katerih zdaj neposredno dobivamo strukturirane podatke. Ekipa Sledilnika ne nadzoruje točnosti izvirnih podatkov in ne objavlja podatkov, ki niso pridobljeni iz uradnih virov ali sredstev javnega obveščanja, zato pa vse podatke navzkrižno preverja, da so pravilni in skladni z izvornimi.
 </details>
@@ -108,9 +108,9 @@ Ker so oznake podatkov tudi v angleščini (gl. vprašanje Ali obstaja vaša str
 
 * **potrjeno okuženi** = To je število oseb, ki so bile pozitivne na testu prisotnosti virusa SARS-CoV-2. Ker je število potrjeno okuženih oseb odvisno zgolj od testiranja in ker zaradi spremenjene politike testiranja večina okuženih z blagimi simptomi sploh ne bo testirana na prisotnost COVID-19, je podatek o potrjeno okuženih bistveno manjši od dejanskega števila okuženih ljudi.
 
-* **hospitalizirani** = To je število okuženih oseb, ki imajo tako resne simptome bolezni COVID-19, da so bile sprejete v bolnišnično oskrbo. 
+* **hospitalizirani** = To je število okuženih oseb, ki imajo tako resne simptome bolezni COVID-19, da so bile sprejete v bolnišnično oskrbo.
 
-* **v intenzivni enoti** = Označuje število hospitaliziranih oseb, ki so zaradi simptomov bolezni COVID-19 v življenjski nevarnosti in potrebujejo namestitev v enoti za intenzivno terapijo. Gre za podmnožico kategorije *Hospitalizirani*. 
+* **v intenzivni enoti** = Označuje število hospitaliziranih oseb, ki so zaradi simptomov bolezni COVID-19 v življenjski nevarnosti in potrebujejo namestitev v enoti za intenzivno terapijo. Gre za podmnožico kategorije *Hospitalizirani*.
 
 * **respirator / kritično stanje** = Označuje število hospitaliziranih oseb v intenzivni enoti, ki za dihanje potrebujejo respirator (medicinski ventilator). Gre za podmnožico kategorije *V intenzivni negi* in kategorije *Hospitalizirani*.
 
@@ -122,18 +122,18 @@ Ker so oznake podatkov tudi v angleščini (gl. vprašanje Ali obstaja vaša str
   <summary>Kaj pomenijo različne faze (faze 1–faza 3), ki jih vidimo na vizualizacijah?</summary>
 
 Navpične črte delijo faze, zamejene z datumi, ko so odgovorni organi spremenili način zbiranja informacij o širjenju okužbe (spremeni se način testiranja, uvedejo se interventni ukrepi samoizolacije, prepovedi zbiranja in gibanja oseb ter obvezne nošnje osnovne zaščite).
- 
+
 Faze so prikazane zato, ker se je s spremembo metodologije testiranja spremenil tudi pomen določenih kazalcev, po katerih lahko presojamo razširjenost okužb.
-* **Faza 1 (4.–12. marec 2020)**: Zabeleženi so prvi primeri okužbe pri nas. Sledi se vsem primerom, testirajo se vsi kontakti. 
+* **Faza 1 (4.–12. marec 2020)**: Zabeleženi so prvi primeri okužbe pri nas. Sledi se vsem primerom, testirajo se vsi kontakti.
 
 * **Faza 2 (13.–19. marec 2020)**: Spremeni se [metodologija testiranja](https://www.gov.si/novice/2020-03-14-spremenjeno-diagnosticiranje-za-realnejse-nacrtovanje-ukrepov-za-obvladovanje-epidemije/), uvedejo se interventni ukrepi o samoizolaciji in socialnem distanciranju.
- 
+
 * **Faza 3 (20. marec–danes)**: Ponovno [se spremeni metodologija testiranja](https://www.gov.si/novice/2020-03-22-ministrstvo-za-zdravje-z-vrsto-ukrepov-v-boju-proti-covid-19/), vzpostavi se prepoved zbiranja več kot petih oseb na javnih površinah.
 </details>
 
 
 <details>
-  <summary>Zakaj je na vizualizaciji "Rast potrjeno okuženih" primerjava z Južno Korejo?</summary>
+  <summary>Zakaj je na vizualizaciji "Prirast potrjeno okuženih" primerjava z Južno Korejo?</summary>
 
 Če na grafu izberemo pogled **Eksponentna rast v dnevih**, lahko vidimo povprečje rasti v istem časovnem obdobju tudi za Južno Korejo. To smo izbrali za primerjavo zato, ker ji je kljub močnemu izbruhu bolezni COVID-19 uspelo z različnimi metodami “sploščiti krivuljo” oz. povedano drugače – Južna Koreja je ena najuspešnejših držav pri obvladovanju epidemije.
 </details>
@@ -159,7 +159,7 @@ Faze so prikazane zato, ker se je s spremembo metodologije testiranja spremenil 
 
 <details>
   <summary>Kako se izračunava “podvojitev v N dneh” in kaj pomeni?</summary>
-  
+
 Na prikazu **Potrjeno okuženi po občinah** je prikazana ocena **Podvojitev v N dneh**. To je ocena povprečne hitrosti eksponentnega naraščanja skupnega števila potrjeno okuženih, izračunana na podlagi spremembe v zadnjih 6 dneh. Povprečje uporabimo zato, da zgladimo dnevno nihanje pri potrjenih primerih, in se izognemo zaokrožitvam zaradi (na srečo) majhnih absolutnih številk. Nižja kot je številka, hitreje se je število potrjeno okuženih povečalo.
 
 Za izračun uporabimo naslednji izraz: `čas_podvojitve = 6 / log2( P0 / P6 )</code>`. V izrazu `Pd` pomeni število potrjeno okuženih v občini pred `d` dnevi.
@@ -190,7 +190,7 @@ Zavedamo se, da obstajajo drugačne metode, ki odstotni prirast prikazujejo drug
 <details>
   <summary>Kaj pomeni logaritemska skala na Y osi in kako deluje?</summary>
 
-Logaritemska skala na navpični osi (ordinata, Y os) je izjemno uporabna za prikaz funkcij oz. količin, ki zelo hitro naraščajo – recimo za t.i. eksponentno rast okuženih –, saj bi v navadnem merilu hitro prerasla najvišjo vrednost na ordinatni osi. 
+Logaritemska skala na navpični osi (ordinata, Y os) je izjemno uporabna za prikaz funkcij oz. količin, ki zelo hitro naraščajo – recimo za t.i. eksponentno rast okuženih –, saj bi v navadnem merilu hitro prerasla najvišjo vrednost na ordinatni osi.
 </details>
 
 <details>
@@ -207,9 +207,9 @@ Pri epidemijah nalezljivih bolezni je zelo pomembna hitrost širjenja oz. stopnj
 <details>
   <summary>Kaj je Sledilnik?</summary>
 
-[Sledilnik je projekt](https://covid-19.sledilnik.org/#/about), ki zbira, analizira in prikazuje nekaj najbolj uporabnih podatkov, da bi lahko bolje razumeli širjenje pandemije koronavirusa in bolezni COVID-19 skupaj z njeno dinamiko in obsegom. 
+[Sledilnik je projekt](https://covid-19.sledilnik.org/#/about), ki zbira, analizira in prikazuje nekaj najbolj uporabnih podatkov, da bi lahko bolje razumeli širjenje pandemije koronavirusa in bolezni COVID-19 skupaj z njeno dinamiko in obsegom.
 
-Želimo si jasno predstaviti, kaj nam trenutni podatki in pregledi govorijo o širjenju virusa v Sloveniji, in zagotoviti, da postanejo informacije o obsegu in resnosti problema COVID-19 v Sloveniji vsem dostopne in čim bolj razumljive. 
+Želimo si jasno predstaviti, kaj nam trenutni podatki in pregledi govorijo o širjenju virusa v Sloveniji, in zagotoviti, da postanejo informacije o obsegu in resnosti problema COVID-19 v Sloveniji vsem dostopne in čim bolj razumljive.
 </details>
 
 
@@ -227,5 +227,3 @@ Pišite nam na info@sledilnik.org – predlagano povezavo bomo preverili in jo, 
 
 Pišite nam na info@sledilnik.org in na kratko opišite, kdo ste in kako lahko prispevate k projektu. Vabljeni!
 </details>
-
-
